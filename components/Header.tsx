@@ -35,7 +35,7 @@ export default function Header() {
               <span>service@wellingtonfhja.com</span>
             </a>
           </div>
-          <div className="text-secondary font-medium">
+          <div className="text-[#F5D78E] font-medium">
             Available 24/7
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="bg-secondary text-white px-6 py-2 rounded-md font-medium hover:bg-secondary-light transition-colors"
+              className="bg-secondary text-primary px-6 py-2 rounded-md font-semibold hover:bg-[#A67B14] transition-colors"
             >
               Get Help Now
             </Link>
@@ -109,7 +109,7 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
-                className="bg-secondary text-white px-6 py-2 rounded-md font-medium text-center hover:bg-secondary-light transition-colors"
+                className="bg-secondary text-primary px-6 py-2 rounded-md font-semibold text-center hover:bg-[#A67B14] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get Help Now

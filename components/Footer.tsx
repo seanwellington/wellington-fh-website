@@ -40,7 +40,7 @@ export default function Footer() {
             <p className="text-gray-300 text-sm mb-4">
               Caring is at the Heart. Providing compassionate funeral services to families throughout Jamaica.
             </p>
-            <p className="text-secondary font-medium">Available 24/7</p>
+            <p className="text-[#F5D78E] font-medium">Available 24/7</p>
           </div>
 
           {/* Quick Links */}

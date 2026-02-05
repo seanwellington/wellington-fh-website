@@ -5,8 +5,9 @@
   --color-primary: #1A365D;      /* Deep Navy Blue - trust, dignity */
   --color-primary-light: #2D4A7C;
   --color-primary-dark: #0F2544;
-  --color-secondary: #B8860B;    /* Warm Gold - elegance, warmth */
-  --color-secondary-light: #D4A821;
+  --color-secondary: #8B6914;    /* Warm Gold - darkened for WCAG AA contrast (4.5:1) */
+  --color-secondary-light: #D4A821; /* Lighter gold for navy backgrounds */
+  --color-secondary-dark: #6B5010;  /* Darker gold for buttons */
   --color-accent: #6B7B6E;       /* Sage Green - calm, nature */
   --color-background: #F7F7F7;   /* Off-white - clean, light */
   --color-text: #2D3748;         /* Charcoal - readable */
