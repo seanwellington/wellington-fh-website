@@ -4,15 +4,18 @@ const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Obituaries", href: "/obituaries" },
+  { name: "Schedule", href: "/schedule" },
   { name: "Contact", href: "/contact" },
-  { name: "Privacy Policy", href: "/privacy" },
 ];
 
 const services = [
-  { name: "At-Need Services", href: "/services#at-need" },
-  { name: "Pre-Planning", href: "/services#pre-planning" },
+  { name: "Pre-Planning", href: "/pre-planning" },
+  { name: "Funeral Services", href: "/services" },
   { name: "Cremation", href: "/services#cremation" },
-  { name: "Memorial Services", href: "/services#memorial" },
+  { name: "FAQs", href: "/faqs" },
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Terms of Service", href: "/terms" },
 ];
 
 export default function Footer() {
