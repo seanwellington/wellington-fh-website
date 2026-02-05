@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     category: "Immediate Needs",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
     questions: [
       {
         q: "What should I do when a loved one passes away?",
@@ -26,6 +31,11 @@ const faqs = [
   },
   {
     category: "Services & Arrangements",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+      </svg>
+    ),
     questions: [
       {
         q: "What types of funeral services do you offer?",
@@ -47,6 +57,11 @@ const faqs = [
   },
   {
     category: "Costs & Payment",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
     questions: [
       {
         q: "How much does a funeral cost?",
@@ -64,6 +79,11 @@ const faqs = [
   },
   {
     category: "Pre-Planning",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+    ),
     questions: [
       {
         q: "Why should I pre-plan my funeral?",
@@ -81,6 +101,11 @@ const faqs = [
   },
   {
     category: "After the Service",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
     questions: [
       {
         q: "How do I obtain death certificates?",
@@ -96,40 +121,49 @@ const faqs = [
 
 export default function FAQsPage() {
   return (
-    <>
+    <main id="main">
       {/* Hero Section */}
-      <section className="hero-gradient text-white py-16 md:py-24">
-        <div className="container-custom">
+      <section className="hero-section py-20 md:py-28">
+        <div className="hero-pattern"></div>
+        <div className="hero-gradient-overlay"></div>
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+            <span className="badge badge-subtle mb-6">Help & Support</span>
+            <h1 className="text-white mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-200">
+            <p className="text-xl md:text-2xl text-white/80 max-w-2xl">
               Find answers to common questions about funeral services, arrangements, and how we can help.
             </p>
           </div>
         </div>
+        <div className="hero-decoration"></div>
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16 md:py-24">
+      <section className="section">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             {faqs.map((category, categoryIndex) => (
               <div key={categoryIndex} className="mb-12 last:mb-0">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-6 pb-2 border-b-2 border-secondary">
-                  {category.category}
-                </h2>
-                <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--navy-800)] to-[var(--navy-700)] flex items-center justify-center text-white shadow-md">
+                    {category.icon}
+                  </div>
+                  <h2 className="text-2xl font-serif text-[var(--navy-900)]">
+                    {category.category}
+                  </h2>
+                </div>
+                <div className="space-y-4 ml-0 md:ml-[60px]">
                   {category.questions.map((faq, faqIndex) => (
-                    <div key={faqIndex} className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                      <h3 className="text-lg font-semibold text-primary mb-3 flex items-start gap-3">
-                        <span className="flex-shrink-0 w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    <div key={faqIndex} className="card p-6 hover:shadow-lg transition-all">
+                      <h3 className="text-lg font-semibold text-[var(--navy-900)] mb-3 flex items-start gap-3">
+                        <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[var(--gold-500)] flex items-center justify-center text-white text-sm font-bold">
                           Q
                         </span>
-                        {faq.q}
+                        <span>{faq.q}</span>
                       </h3>
-                      <p className="text-gray-600 leading-relaxed pl-9">
+                      <p className="text-[var(--neutral-600)] leading-relaxed pl-10">
                         {faq.a}
                       </p>
                     </div>
@@ -142,33 +176,32 @@ export default function FAQsPage() {
       </section>
 
       {/* Still Have Questions */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
-            Still Have Questions?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            We understand you may have specific questions about your situation. Our compassionate team is here to help.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="tel:+18769967077"
-              className="bg-secondary text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-secondary-light transition-colors inline-flex items-center justify-center gap-2"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      <section className="section bg-[var(--color-background)]">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl bg-[var(--gold-100)] flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-[var(--gold-600)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Call Us: +1 (876) 996-7077
-            </a>
-            <Link
-              href="/contact"
-              className="bg-primary text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-primary-light transition-colors"
-            >
-              Contact Us Online
-            </Link>
+            </div>
+            <h2 className="mb-4">Still Have Questions?</h2>
+            <p className="text-lg text-[var(--neutral-600)] mb-8">
+              We understand you may have specific questions about your situation. Our compassionate team is here to help.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="tel:+18769967077" className="btn btn-primary btn-lg">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Call +1 (876) 996-7077
+              </a>
+              <Link href="/contact" className="btn btn-navy btn-lg">
+                Contact Us Online
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
