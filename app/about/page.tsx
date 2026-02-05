@@ -122,16 +122,16 @@ export default function AboutPage() {
             
             <div className="relative">
               <div className="card card-elevated p-8 text-center">
-                <div className="relative w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[var(--gold-400)] shadow-lg">
+                {/* Logo with dark background for visibility */}
+                <div className="bg-[var(--navy-900)] rounded-2xl p-6 mb-6 inline-block mx-auto">
                   <Image
                     src="/logo.png"
                     alt="Wellington's Funeral Home"
-                    fill
-                    className="object-cover"
+                    width={220}
+                    height={100}
+                    className="h-20 w-auto object-contain"
                   />
                 </div>
-                <h3 className="text-[var(--navy-900)] text-2xl mb-2">Wellington&apos;s</h3>
-                <p className="text-[var(--gold-600)] font-semibold mb-4 text-sm uppercase tracking-wider">Funeral Home & Co.</p>
                 <p className="text-[var(--neutral-600)] italic text-lg mb-6">&ldquo;Caring is at the Heart&rdquo;</p>
                 
                 <div className="pt-6 border-t border-[var(--neutral-200)]">

@@ -74,22 +74,16 @@ export default function Header() {
             <div className="flex justify-between items-center">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-3 group">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--gold-500)]/30 group-hover:border-[var(--gold-500)] transition-colors shadow-md">
+                {/* Logo container with dark background for visibility */}
+                <div className="relative h-14 w-auto flex items-center bg-[var(--navy-900)] rounded-lg px-3 py-1 shadow-md group-hover:shadow-lg transition-shadow">
                   <Image
                     src="/logo.png"
-                    alt="Wellington's Funeral Home"
-                    fill
-                    className="object-cover"
+                    alt="Wellington Funeral Home"
+                    width={180}
+                    height={50}
+                    className="h-12 w-auto object-contain"
                     priority
                   />
-                </div>
-                <div className="hidden sm:block">
-                  <h1 className="text-xl font-serif text-[var(--navy-900)] font-bold leading-tight tracking-tight">
-                    Wellington&apos;s
-                  </h1>
-                  <p className="text-[10px] text-[var(--neutral-500)] uppercase tracking-[0.15em] font-medium">
-                    Funeral Home & Co.
-                  </p>
                 </div>
               </Link>
 
